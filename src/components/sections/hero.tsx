@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { PixelSnow } from "@/components/ui/pixel-snow";
+// import { PixelSnow } from "@/components/ui/pixel-snow";
 
 export default function Hero() {
   return (
