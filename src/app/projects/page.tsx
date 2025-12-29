@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
-// import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 
 const projects = [
@@ -13,49 +12,55 @@ const projects = [
     id: 1,
     title: "Welth",
     category: ["Full Stack", "AI"],
-    description: "AI-powered finance platform with receipt scanning and budget alerts.",
+    description: "AI-powered finance platform with receipt scanning and budget alerts. Helps users track expenses and get personalized financial advice.",
     tech: ["Next.js 15", "Supabase", "Gemini API"],
-    links: { github: "#", demo: "#" },
+    links: { github: "https://github.com/Kru5hna/Welth-AI-Finance-Platform", demo: "#" },
+    image: "/welth.png"
   },
   {
     id: 2,
     title: "ChatHub",
     category: ["Full Stack"],
-    description: "Real-time messaging platform with secure JWT auth and Socket.io.",
+    description: "Real-time messaging platform enabling seamless communication with instant updates, secure JWT auth, and separate chat rooms.",
     tech: ["Node.js", "Socket.io", "MongoDB"],
-    links: { github: "#", demo: "#" },
+    links: { github: "https://github.com/Kru5hna/ChatHub", demo: "#" },
+    image: "/chathub.png"
   },
   {
     id: 3,
     title: "NotesBud",
+    description: "A feature-rich note-taking application designed for productivity with real-time sync and CRUD operations.",
     category: ["Full Stack"],
-    description: "Secure note-taking app with real-time sync and CRUD operations.",
     tech: ["Next.js", "Firebase", "Firestore"],
-    links: { github: "#", demo: "#" },
+    links: { github: "https://github.com/Kru5hna/NotesBud", demo: "#" },
+    image: "/notesbud.png"
   },
   {
     id: 4,
     title: "Pokedex",
     category: ["Frontend"],
-    description: "Interactive Pokédex exploring the first 151 Pokémon.",
+    description: "Interactive Pokédex exploring the first 151 Pokémon with detailed stats and abilities.",
     tech: ["React", "CSS"],
-    links: { github: "#", demo: "#" },
+    links: { github: "https://github.com/Kru5hna/Pokedex", demo: "#" },
+    image: "/pokedex.png"
   },
   {
     id: 5,
     title: "DailyBrew",
     category: ["Frontend"],
-    description: "Track daily caffeine intake and stay balanced.",
-    tech: ["JavaScript"],
-    links: { github: "#", demo: "#" },
+    description: "Your daily dose of coffee and news. Track caffeine intake and stay balanced.",
+    tech: ["JavaScript", "API"],
+    links: { github: "https://github.com/Kru5hna/DailyBrew", demo: "#" },
+    image: "/dailybrew.png"
   },
   {
     id: 6,
     title: "Solana Wallet Adapter",
     category: ["Web3"],
-    description: "Wallet adapter integration for Solana blockchain apps.",
+    description: "Wallet adapter integration for Solana blockchain apps, facilitating secure transactions.",
     tech: ["Web3", "Solana", "React"],
-    links: { github: "#", demo: "#" },
+    links: { github: "https://github.com/Kru5hna/Web3-projects/tree/master/solana-Wallet-adapter", demo: "#" },
+    image: "/solanaWalletAdapter.png"
   },
 ];
 
@@ -69,12 +74,28 @@ export default function ProjectsPage() {
   );
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen relative bg-background overflow-hidden">
+        {/* Retro Grid Background */}
+       <div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none -z-10">
+            <div className="absolute left-0 right-0 top-0 m-auto h-[310px] w-[310px] rounded-full bg-emerald-500 opacity-20 blur-[100px]"></div>
+       </div>
+
       <Navbar />
-      <main className="flex-1 pt-24 pb-20">
+      
+      <main className="flex-1 pt-24 pb-20 relative z-10">
         <div className="container px-4 md:px-6 mx-auto">
+            
+          {/* Back Button */}
+          <div className="mb-8">
+            <Button variant="ghost" className="gap-2 pl-0 hover:bg-transparent hover:text-emerald-400 transition-colors" asChild>
+                <Link href="/">
+                    <ArrowLeft className="h-5 w-5" /> Back to Home
+                </Link>
+            </Button>
+          </div>
+
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">All Projects</h1>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">All Projects</h1>
             <p className="text-muted-foreground">Explorations in code, design, and problem solving.</p>
           </div>
 
@@ -103,37 +124,53 @@ export default function ProjectsPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
-                  className="group flex flex-col rounded-2xl bg-card border border-border overflow-hidden hover:border-accent/50 transition-colors"
+                  className="group flex flex-col rounded-2xl bg-card border border-border overflow-hidden hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 transition-all duration-300"
                 >
                   <div className="aspect-video bg-muted/20 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 font-medium">
-                      {project.title} Preview
+                     {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <Button variant="secondary" size="sm" className="rounded-full pointer-events-none">
+                            View Details
+                        </Button>
                     </div>
                   </div>
                   
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-start justify-between mb-2">
-                       <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{project.title}</h3>
+                       <h3 className="text-xl font-bold text-foreground group-hover:text-emerald-400 transition-colors">{project.title}</h3>
                     </div>
                     
                     <p className="text-sm text-muted-foreground mb-4 flex-1">{project.description}</p>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tech.map((t) => (
-                        <span key={t} className="px-2 py-0.5 bg-secondary rounded text-[10px] font-medium text-secondary-foreground uppercase tracking-wider">
+                        <span key={t} className="px-2 py-0.5 bg-secondary/50 rounded text-[10px] font-medium text-secondary-foreground uppercase tracking-wider border border-white/5">
                           {t}
                         </span>
                       ))}
                     </div>
 
                     <div className="flex items-center gap-4 mt-auto">
-                      <Link href={project.links.github} className="text-sm font-medium flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors">
-                        <Github className="h-4 w-4" /> Code
-                      </Link>
-                      <Link href={project.links.demo} className="text-sm font-medium flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors">
-                        <ExternalLink className="h-4 w-4" /> Demo
-                      </Link>
+                      <Button variant="outline" size="sm" className="rounded-full flex-1 gap-2" asChild>
+                         <Link href={project.links.github} target="_blank">
+                            <Github className="h-4 w-4" /> Code
+                         </Link>
+                      </Button>
+                      
+                       <Button variant={project.links.demo !== "#" ? "default" : "ghost"} size="sm" className="rounded-full flex-1 gap-2" disabled={project.links.demo === "#"} asChild={project.links.demo !== "#"}>
+                         {project.links.demo !== "#" ? (
+                             <Link href={project.links.demo} target="_blank">
+                                <ExternalLink className="h-4 w-4" /> Demo
+                             </Link>
+                         ) : (
+                             <span className="opacity-50 cursor-not-allowed text-muted-foreground"><ExternalLink className="h-4 w-4 mr-2" /> Demo</span>
+                         )}
+                      </Button>
                     </div>
                   </div>
                 </motion.div>
@@ -142,7 +179,6 @@ export default function ProjectsPage() {
           </motion.div>
         </div>
       </main>
-      {/* <Footer /> */}
     </div>
   );
 }

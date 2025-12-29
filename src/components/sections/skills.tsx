@@ -5,7 +5,7 @@ import { Code2, Database, Globe, Server, Layers, Cpu, Wrench } from "lucide-reac
 
 // Simplified data structure, will use text pills but with updated list
 const skills = {
-  "Languages": ["JavaScript", "Java", "TypeScript", "SQL"],
+  "Languages": ["JavaScript", "Java"],
   "Tech Stack (MERN+)": ["MongoDB", "Express.js", "React", "Node.js", "Next.js", "Tailwind CSS"],
   "Database": ["MongoDB", "PostgreSQL (Supabase)"],
   "Tools & Libraries": ["Git", "GitHub", "VS Code", "Postman", "Shadcn UI", "Prisma"]

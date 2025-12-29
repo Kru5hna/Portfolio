@@ -24,7 +24,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="mb-8 relative"
         >
-            <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto">
+            <div className="relative w-32 h-32 md:w-44 md:h-44 mx-auto">
                 <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-xl animate-pulse" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
