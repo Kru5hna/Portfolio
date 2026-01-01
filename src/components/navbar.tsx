@@ -54,7 +54,7 @@ export default function Navbar() {
               `}
               style={{
                 fontFamily: "'Orbitron', 'Courier New', monospace",
-                letterSpacing: '-0.02em',
+                letterSpacing: '-0.12em',
                 filter: isLogoHovered
                   ? 'drop-shadow(0 0 25px rgba(236, 72, 153, 0.8)) drop-shadow(0 4px 8px rgba(0,0,0,0.5))'
                   : 'drop-shadow(0 0 15px rgba(236, 72, 153, 0.5)) drop-shadow(0 2px 4px rgba(0,0,0,0.3))'

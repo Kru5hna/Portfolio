@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: "Krushna Raut ",
   description: "Portfolio of Krushna Raut, a Full Stack Developer specializing in modern web technologies, AI, and Web3.",
   icons: {
-    icon: "/pfp copy.png",
-    shortcut: "/pfp copy.png",
-    apple: "/pfp copy.png",
+    icon: "/pfp_copy.png",
+    shortcut: "/pfp_copy.png",
+    apple: "/pfp_copy.png",
   },
 };
 
