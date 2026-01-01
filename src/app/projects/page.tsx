@@ -14,7 +14,7 @@ const projects = [
     category: ["Full Stack", "AI"],
     description: "AI-powered finance platform with receipt scanning and budget alerts. Helps users track expenses and get personalized financial advice.",
     tech: ["Next.js 15", "Supabase", "Gemini API"],
-    links: { github: "https://github.com/Kru5hna/Welth-AI-Finance-Platform", demo: "#" },
+    links: { github: "https://github.com/Kru5hna/Welth-AI-Finance-Platform", demo: "https://welth-kru5hna.vercel.app/" },
     image: "/welth.png"
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     category: ["Full Stack"],
     description: "Real-time messaging platform enabling seamless communication with instant updates, secure JWT auth, and separate chat rooms.",
     tech: ["Node.js", "Socket.io", "MongoDB"],
-    links: { github: "https://github.com/Kru5hna/ChatHub", demo: "#" },
+    links: { github: "https://github.com/Kru5hna/ChatHub", demo: "https://chat-app-jm55l.sevalla.app/login" },
     image: "/chathub.png"
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     description: "A feature-rich note-taking application designed for productivity with real-time sync and CRUD operations.",
     category: ["Full Stack"],
     tech: ["Next.js", "Firebase", "Firestore"],
-    links: { github: "https://github.com/Kru5hna/NotesBud", demo: "#" },
+    links: { github: "https://github.com/Kru5hna/NotesBud", demo: "https://notesbuds.netlify.app/" },
     image: "/notesbud.png"
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     category: ["Frontend"],
     description: "Interactive Pokédex exploring the first 151 Pokémon with detailed stats and abilities.",
     tech: ["React", "CSS"],
-    links: { github: "https://github.com/Kru5hna/Pokedex", demo: "#" },
+    links: { github: "https://github.com/Kru5hna/Pokedex", demo: "https://krushna-pokedex.netlify.app/" },
     image: "/pokedex.png"
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     category: ["Frontend"],
     description: "Your daily dose of coffee and news. Track caffeine intake and stay balanced.",
     tech: ["JavaScript", "API"],
-    links: { github: "https://github.com/Kru5hna/DailyBrew", demo: "#" },
+    links: { github: "https://github.com/Kru5hna/DailyBrew", demo: "https://dailybrews.netlify.app/" },
     image: "/dailybrew.png"
   },
   {
@@ -127,17 +127,46 @@ export default function ProjectsPage() {
                   className="group flex flex-col rounded-2xl bg-card border border-border overflow-hidden hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 transition-all duration-300"
                 >
                   <div className="aspect-video bg-muted/20 relative overflow-hidden">
-                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <Button variant="secondary" size="sm" className="rounded-full pointer-events-none">
-                            View Details
-                        </Button>
-                    </div>
+                     {project.links.demo !== "#" ? (
+                       <>
+                         {/* Iframe container - shows actual project on hover */}
+                         <div className="absolute inset-0 w-full h-full">
+                           <iframe
+                             src={project.links.demo}
+                             title={project.title}
+                             className="w-[200%] h-[200%] scale-50 origin-top-left pointer-events-none group-hover:pointer-events-auto transition-all"
+                             loading="lazy"
+                             sandbox="allow-scripts allow-same-origin"
+                           />
+                         </div>
+                         {/* Fallback image for initial load */}
+                         {/* eslint-disable-next-line @next/next/no-img-element */}
+                         <img 
+                           src={project.image} 
+                           alt={project.title} 
+                           className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none"
+                         />
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                           <div className="absolute bottom-2 left-2 px-2 py-1 bg-emerald-500/80 rounded text-xs font-medium text-white">
+                             Scroll to preview
+                           </div>
+                         </div>
+                       </>
+                     ) : (
+                       <>
+                         {/* eslint-disable-next-line @next/next/no-img-element */}
+                         <img 
+                           src={project.image} 
+                           alt={project.title} 
+                           className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                         />
+                         <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                           <span className="px-3 py-1.5 bg-zinc-700/80 rounded-full text-xs font-medium text-zinc-300">
+                             Not Deployed
+                           </span>
+                         </div>
+                       </>
+                     )}
                   </div>
                   
                   <div className="p-6 flex flex-col flex-1">

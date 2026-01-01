@@ -11,7 +11,7 @@ const projects = [
     description: "An AI-powered financial management platform that helps users track expenses, set budgets, and get personalized financial advice.",
     tech: ["Next.js", "OpenAI API", "Supabase"],
     links: {
-      demo: "#", // Add live link if available
+      demo: "https://welth-kru5hna.vercel.app/",
       github: "https://github.com/Kru5hna/Welth-AI-Finance-Platform",
     },
     image: "/welth.png", 
@@ -21,7 +21,7 @@ const projects = [
     description: "A real-time messaging platform enabling seamless communication with instant updates and separate chat rooms.",
     tech: ["React", "Firebase", "Tailwind CSS"],
     links: {
-      demo: "#",
+      demo: "https://chat-app-jm55l.sevalla.app/login",
       github: "https://github.com/Kru5hna/ChatHub",
     },
     image: "/chathub.png",
@@ -30,14 +30,14 @@ const projects = [
     title: "NotesBud",
     description: "A feature-rich note-taking application designed for productivity.",
     tech: ["Next.js"],
-    links: { demo: "#", github: "https://github.com/Kru5hna/NotesBud" },
+    links: { demo: "https://notesbuds.netlify.app/", github: "https://github.com/Kru5hna/NotesBud" },
     image: "/notesbud.png"
   },
   {
     title: "DailyBrew",
     description: "Your daily dose of coffee and news.",
     tech: ["React", "API"],
-    links: { demo: "#", github: "https://github.com/Kru5hna/DailyBrew" },
+    links: { demo: "https://dailybrews.netlify.app/", github: "https://github.com/Kru5hna/DailyBrew" },
     image: "/dailybrew.png"
   }
 ];

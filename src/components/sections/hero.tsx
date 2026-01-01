@@ -8,12 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen pt-20 overflow-hidden bg-background">
-       
-       {/* CSS-only Retro Grid Background (Safe & Performant) */}
-       <div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
-            <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-emerald-500 opacity-20 blur-[100px]"></div>
-       </div>
+    <section className="relative flex flex-col items-center justify-center min-h-screen pt-20 overflow-hidden">
        
        <div className="container relative z-10 flex flex-col items-center text-center px-4 md:px-6">
         
