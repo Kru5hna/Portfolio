@@ -56,7 +56,7 @@ export default function About() {
              <div className="relative w-64 h-64 md:w-72 md:h-72 aspect-square rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
-                  src="/pfp.jpg"
+                  src="/pfp.png"
                   alt="Krushna Raut" 
                   className="w-full h-full object-cover"
                 />
