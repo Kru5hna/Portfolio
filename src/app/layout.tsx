@@ -6,12 +6,12 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Krushna Raut | Full Stack Developer",
+  title: "Krushna Raut ",
   description: "Portfolio of Krushna Raut, a Full Stack Developer specializing in modern web technologies, AI, and Web3.",
   icons: {
-    icon: "/pfp.png",
-    shortcut: "/pfp.png",
-    apple: "/pfp.png",
+    icon: "/pfp copy.png",
+    shortcut: "/pfp copy.png",
+    apple: "/pfp copy.png",
   },
 };
 
