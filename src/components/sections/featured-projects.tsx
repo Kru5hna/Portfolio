@@ -63,14 +63,43 @@ export default function FeaturedProjects() {
               transition={{ delay: index * 0.1 }}
               className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-colors"
             >
-              {/* Image Container - MADE SMALLER aspect ratio */}
+              {/* Image/Iframe Container */}
               <div className="relative aspect-[16/9] overflow-hidden bg-muted">
-                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-                />
+                 {project.links.demo !== "#" ? (
+                   <>
+                     {/* Iframe container - shows actual project on hover */}
+                     <div className="absolute inset-0 w-full h-full">
+                       <iframe
+                         src={project.links.demo}
+                         title={project.title}
+                         className="w-[200%] h-[200%] scale-50 origin-top-left pointer-events-none group-hover:pointer-events-auto transition-all"
+                         loading="lazy"
+                         sandbox="allow-scripts allow-same-origin"
+                       />
+                     </div>
+                     {/* Fallback image for initial load */}
+                     {/* eslint-disable-next-line @next/next/no-img-element */}
+                     <img
+                       src={project.image}
+                       alt={project.title}
+                       className="object-cover w-full h-full absolute inset-0 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                       <div className="absolute bottom-2 left-2 px-2 py-1 bg-emerald-500/80 rounded text-xs font-medium text-white">
+                         Scroll to preview
+                       </div>
+                     </div>
+                   </>
+                 ) : (
+                   <>
+                     {/* eslint-disable-next-line @next/next/no-img-element */}
+                     <img
+                       src={project.image}
+                       alt={project.title}
+                       className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                     />
+                   </>
+                 )}
               </div>
 
               <div className="p-6">
