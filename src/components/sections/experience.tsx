@@ -7,7 +7,7 @@ const experience = [
   {
     company: "Avijo",
     role: "Full Stack Developer Intern",
-    period: "Dec 2025 – Present",
+    period: "Dec 2025 – Mar 2026",
     type: "Remote | Part-Time",
     description: "Contributing to the development of a healthcare commerce platform.",
     achievements: [

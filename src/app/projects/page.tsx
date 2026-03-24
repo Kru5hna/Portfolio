@@ -23,7 +23,7 @@ const projects = [
     category: ["Full Stack"],
     description: "Real-time messaging platform enabling seamless communication with instant updates, secure JWT auth, and separate chat rooms.",
     tech: ["Node.js", "Socket.io", "MongoDB"],
-    links: { github: "https://github.com/Kru5hna/ChatHub", demo: "https://chat-app-jm55l.sevalla.app/login" },
+    links: { github: "https://github.com/Kru5hna/ChatHub", demo: "https://chat-hub-eosin-phi.vercel.app/" },
     image: "/chathub.png"
   },
   {
