@@ -55,11 +55,18 @@ export default function About() {
           >
             <div className="relative w-80 h-80 my-3 md:w-96 md:h-96 aspect-square">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/pfp.png"
-                alt="Krushna Raut"
-                className="w-full h-full object-contain"
-              />
+              <div className="relative w-72 h-72">
+  {/* Animated glowing ring */}
+  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-fuchsia-500 via-purple-500 to-cyan-400 animate-spin [animation-duration:4s] p-[3px]">
+    <div className="w-full h-full rounded-full bg-[#0d1117]" />
+  </div>
+  {/* Image */}
+  <img
+    src="/pfp_copy.png"
+    alt="Krushna Raut"
+    className="absolute inset-[4px] w-[calc(100%-8px)] h-[calc(100%-8px)] rounded-full object-cover object-top"
+  />
+</div>
             </div>
           </motion.div>
 
