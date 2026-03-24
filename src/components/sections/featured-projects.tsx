@@ -21,7 +21,7 @@ const projects = [
     description: "A real-time messaging platform enabling seamless communication with instant updates and separate chat rooms.",
     tech: ["React", "Firebase", "Tailwind CSS"],
     links: {
-      demo: "https://chat-app-jm55l.sevalla.app/login",
+      demo: "https://chat-hub-eosin-phi.vercel.app",
       github: "https://github.com/Kru5hna/ChatHub",
     },
     image: "/chathub.png",
