@@ -1,0 +1,55 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Rate-Shield sample project image</title>
+  <desc id="desc">Dark developer dashboard illustration with a shield, rate limit algorithms, and request flow controls.</desc>
+  <rect width="1200" height="675" fill="#080B10"/>
+  <rect x="64" y="54" width="1072" height="567" rx="32" fill="#0E141B" stroke="#243241" stroke-width="2"/>
+  <rect x="64" y="54" width="1072" height="76" rx="32" fill="#121B24"/>
+  <circle cx="104" cy="92" r="10" fill="#FF5F57"/>
+  <circle cx="136" cy="92" r="10" fill="#FFBD2E"/>
+  <circle cx="168" cy="92" r="10" fill="#28C840"/>
+  <text x="602" y="101" text-anchor="middle" fill="#DCE8F2" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">rate-shield</text>
+  <g filter="url(#glow)">
+    <path d="M600 173L751 224V331C751 434 686 517 600 548C514 517 449 434 449 331V224L600 173Z" fill="#0B2E2A" stroke="#38F2AE" stroke-width="5"/>
+    <path d="M600 223L709 260V336C709 410 663 470 600 494C537 470 491 410 491 336V260L600 223Z" fill="#101820" stroke="#6EF7C2" stroke-width="3"/>
+    <path d="M554 337L587 370L654 300" stroke="#6EF7C2" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="109" y="184" width="270" height="88" rx="18" fill="#121B24" stroke="#274055"/>
+    <text x="135" y="218" fill="#EAF3F7" font-size="22" font-weight="700">Fixed Window</text>
+    <text x="135" y="249" fill="#93A6B6" font-size="18">100 req / min</text>
+    <rect x="109" y="306" width="270" height="88" rx="18" fill="#121B24" stroke="#274055"/>
+    <text x="135" y="340" fill="#EAF3F7" font-size="22" font-weight="700">Sliding Window</text>
+    <text x="135" y="371" fill="#93A6B6" font-size="18">no boundary burst</text>
+    <rect x="109" y="428" width="270" height="88" rx="18" fill="#121B24" stroke="#274055"/>
+    <text x="135" y="462" fill="#EAF3F7" font-size="22" font-weight="700">Token Bucket</text>
+    <text x="135" y="493" fill="#93A6B6" font-size="18">controlled bursts</text>
+    <rect x="821" y="184" width="270" height="88" rx="18" fill="#121B24" stroke="#274055"/>
+    <text x="847" y="218" fill="#EAF3F7" font-size="22" font-weight="700">Redis Atomic</text>
+    <text x="847" y="249" fill="#93A6B6" font-size="18">Lua scripted ops</text>
+    <rect x="821" y="306" width="270" height="88" rx="18" fill="#121B24" stroke="#274055"/>
+    <text x="847" y="340" fill="#EAF3F7" font-size="22" font-weight="700">FallbackLimiter</text>
+    <text x="847" y="371" fill="#93A6B6" font-size="18">circuit breaker</text>
+    <rect x="821" y="428" width="270" height="88" rx="18" fill="#121B24" stroke="#274055"/>
+    <text x="847" y="462" fill="#EAF3F7" font-size="22" font-weight="700">Express Ready</text>
+    <text x="847" y="493" fill="#93A6B6" font-size="18">drop-in middleware</text>
+  </g>
+  <path d="M380 228H450" stroke="#38F2AE" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 14"/>
+  <path d="M380 350H450" stroke="#38F2AE" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 14"/>
+  <path d="M380 472H450" stroke="#38F2AE" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 14"/>
+  <path d="M750 228H820" stroke="#38F2AE" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 14"/>
+  <path d="M750 350H820" stroke="#38F2AE" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 14"/>
+  <path d="M750 472H820" stroke="#38F2AE" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 14"/>
+  <rect x="413" y="555" width="374" height="44" rx="22" fill="#0A241F" stroke="#38F2AE"/>
+  <text x="600" y="584" text-anchor="middle" fill="#C9FFE8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">allow / block decisions in milliseconds</text>
+  <defs>
+    <filter id="glow" x="405" y="129" width="390" height="463" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="16"/>
+      <feOffset/>
+      <feComposite in2="SourceAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.219608 0 0 0 0 0.94902 0 0 0 0 0.682353 0 0 0 0.38 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+</svg>
