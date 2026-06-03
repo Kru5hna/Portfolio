@@ -40,6 +40,7 @@ export const projects: Project[] = [
     tech: ["Python", "Flask", "YOLOv8", "EasyOCR"],
     links: {
       github: "https://github.com/Kru5hna/SecureGate",
+      demo: "https://huggingface.co/spaces/Krishna2722/SecureGate"
     },
     image: "/securegate.svg",
     status: "Sample preview",

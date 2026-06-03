@@ -8,14 +8,16 @@ const experience = [
     company: "Avijo",
     role: "Full Stack Developer Intern",
     period: "Dec 2025 – Mar 2026",
-    type: "Remote | Part-Time",
+    type: "Remote",
     description:
       "Contributing to the development of a healthcare commerce platform.",
     achievements: [
-      "Developed core frontend features including product listing, cart, and order lifecycle using React & Tailwind.",
-      "Built robust REST APIs with Node.js and Express for order management and pharmacy operations.",
-      "Designed schemas and aggregation pipelines in MongoDB for efficient inventory tracking.",
+      "Engineered full-stack features across a healthcare commerce platform, owning both frontend (React, Tailwind CSS) and backend (Node.js, Express) for pharmacy and order management workflows.",
+      "Implemented role-based access control (RBAC) and an Aadhaar-linked authentication system, integrating ABDM APIs for ABHA (M1–M4) onboarding and identity verification across user roles.",
+      "Designed MongoDB schemas and aggregation pipelines for inventory and order tracking; led a sub-team on modular feature delivery.",
     ],
+
+  
   },
 ];
 

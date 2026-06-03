@@ -43,10 +43,10 @@ export default function Contact() {
             <HiOutlineMail className="text-2xl mb-2 mx-auto text-custom-pink" />
             <h4 className="text-white font-bold">Email</h4>
             <h5 className="text-custom-light text-sm">
-              krushna.raut@example.com
+              krishraut2103@gmail.com
             </h5>
             <a
-              href="mailto:krushna.raut@example.com"
+              href="mailto:krishraut2103@gmail.com"
               className="inline-block mt-3 text-sm font-medium text-custom-light hover:text-white"
             >
               Send me an email

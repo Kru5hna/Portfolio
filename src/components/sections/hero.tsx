@@ -76,7 +76,7 @@ export default function Hero() {
             Connect
           </Link>
           <Link
-            href="https://drive.google.com/file/d/1TSnWt5SZvLPN0GqtVUP0uSLROtBl-zX3/view"
+            href="https://drive.google.com/file/d/13OP6ARp7iTF_8qu6TU9Qi9hJPrNxh-3G/view?usp=sharing"
             target="_blank"
             className="btn-outline px-6 py-3"
           >

@@ -96,10 +96,8 @@ export default function About() {
                   🚀
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-sm">8+ Projects</h3>
-                  <h4 className="text-custom-light font-medium text-sm">
-                    Open Source Contributor
-                  </h4>
+                  <h3 className="text-white font-bold text-sm">8+ Projects Shipped</h3>
+                  
                 </div>
               </div>
             </div>
