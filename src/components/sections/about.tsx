@@ -1,77 +1,120 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-32">
-      <div className="container px-4 md:px-6 mx-auto max-w-5xl">
-        <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-center md:items-start">
+    <section id="about" style={{ minHeight: "100vh", padding: "8rem 0" }}>
+      <h5 className="text-center text-custom-light">Get To Know Me</h5>
+      <h2 className="text-center text-white text-3xl md:text-4xl font-bold mb-12">
+        About Me
+      </h2>
 
-          {/* Content Column */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="w-full md:w-2/3 space-y-6 text-center md:text-left order-2 md:order-1"
+      <div className="container mx-auto" style={{ width: "80vw", maxWidth: "1700px" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="grid gap-10 items-start"
+          style={{
+            gridTemplateColumns: "minmax(280px, 32%) 1fr",
+          }}
+        >
+          {/* Portrait */}
+          <div
+            className="aspect-square overflow-hidden rounded-2xl"
+            style={{ background: "rgba(0,0,0,0.6)" }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Hi, I&apos;m Krushna <span className="inline-block animate-wave">👋</span>
-            </h2>
-            <h3 className="text-2xl md:text-3xl font-semibold text-muted-foreground">
-              A Full Stack Web Developer.
-            </h3>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/pfp_copy.png"
+              alt="Krushna Raut"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: "center 18%" }}
+            />
+          </div>
 
-            <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
-              <p>
-                I enjoy designing systems with a strong focus on low-level design, while bringing them to life with intuitive and performant frontend experiences using <span className="text-foreground font-medium">TypeScript</span>, <span className="text-foreground font-medium">React</span>, and <span className="text-foreground font-medium">Next.js</span>.
+          {/* Content */}
+          <div className="flex flex-col w-full">
+            {/* Bio */}
+            <div
+              className="glass-card rounded-2xl p-6 md:p-8 mb-5"
+              style={{ lineHeight: 1.6 }}
+            >
+              <p className="text-custom-light">
+                Hello, I&apos;m Krushna — a Full Stack Developer from India with a
+                passion for building elegant web applications and exploring AI.
+                I specialize in the MERN stack, Next.js, and TypeScript, with
+                hands-on experience in backend systems, REST APIs, and database
+                design. Like many others, I dreamed of making games as a child,
+                so I asked myself, why not start with coding? That curiosity led
+                me into full-stack development, where I now build scalable
+                applications and AI-powered solutions with a strong emphasis on
+                clean architecture and user experience.
               </p>
-              <p>
-                Like many others, I dreamed of making games as a child so I asked myself, why not start with coding? That curiosity led me into full-stack development, where I now build scalable applications and AI-powered solutions with a strong emphasis on clean architecture and user experience.
-              </p>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
-              <Button className="rounded-full" asChild>
-                <Link href="https://drive.google.com/file/d/1TSnWt5SZvLPN0GqtVUP0uSLROtBl-zX3/view" target="_blank">Resume / CV</Link>
-              </Button>
-              <Button variant="outline" className="rounded-full" asChild>
-                <Link href="#contact">Get in touch <ArrowUpRight className="ml-2 h-4 w-4" /></Link>
-              </Button>
-            </div>
-          </motion.div>
+            {/* Experience cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="glass-card rounded-xl p-5 flex gap-4 items-start shadow-lg">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/navbarImg.gif"
+                  alt="Developer"
+                  className="w-12 h-12 rounded-lg object-contain flex-shrink-0 p-1"
+                  style={{ background: "rgba(0,0,0,0.6)" }}
+                />
+                <div>
+                  <h3 className="text-white font-bold text-sm">Avijo</h3>
+                  <h4 className="text-custom-light font-medium text-sm">
+                    Full Stack Developer Intern
+                  </h4>
+                </div>
+              </div>
 
-          {/* Avatar Column */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-full md:w-1/3 flex justify-center md:justify-start order-1 md:order-2"
-          >
-            <div className="relative w-80 h-80 my-3 md:w-96 md:h-96 aspect-square">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <div className="relative w-72 h-72">
-  {/* Animated glowing ring */}
-  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-fuchsia-500 via-purple-500 to-cyan-400 animate-spin [animation-duration:4s] p-[3px]">
-    <div className="w-full h-full rounded-full bg-[#0d1117]" />
-  </div>
-  {/* Image */}
-  <img
-    src="/pfp_copy.png"
-    alt="Krushna Raut"
-    className="absolute inset-[4px] w-[calc(100%-8px)] h-[calc(100%-8px)] rounded-full object-cover object-top"
-  />
-</div>
-            </div>
-          </motion.div>
+              <div className="glass-card rounded-xl p-5 flex gap-4 items-start shadow-lg">
+                <div
+                  className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl"
+                  style={{ background: "rgba(0,0,0,0.6)" }}
+                >
+                  🎓
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-sm">Education</h3>
+                  <h4 className="text-custom-light font-medium text-sm">
+                    B.Tech in CS
+                  </h4>
+                </div>
+              </div>
 
-        </div>
+              <div className="glass-card rounded-xl p-5 flex gap-4 items-start shadow-lg">
+                <div
+                  className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl"
+                  style={{ background: "rgba(0,0,0,0.6)" }}
+                >
+                  🚀
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-sm">8+ Projects</h3>
+                  <h4 className="text-custom-light font-medium text-sm">
+                    Open Source Contributor
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
+
+      {/* Mobile responsive override */}
+      <style jsx>{`
+        @media (max-width: 900px) {
+          .grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

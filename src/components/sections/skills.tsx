@@ -1,66 +1,118 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Database, Globe, Server, Layers, Cpu, Wrench } from "lucide-react";
+import {
+  SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiPrisma,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiFirebase,
+  SiPython,
+  SiDocker,
+  SiRedis,
+  SiSolana,
+} from "react-icons/si";
+import { IconType } from "react-icons";
 
-// Simplified data structure, will use text pills but with updated list
-const skills = {
-  "Languages": ["JavaScript", "Java"],
-  "Tech Stack (MERN+)": ["MongoDB", "Express.js", "React", "Node.js", "Next.js", "Tailwind CSS"],
-  "Database": ["MongoDB", "PostgreSQL (Supabase)"],
-  "Tools & Libraries": ["Git", "GitHub", "VS Code", "Postman", "Shadcn UI", "Prisma"]
-};
+type TileProps = { icon: IconType; name: string };
+
+const Tile = ({ icon: Icon, name }: TileProps) => (
+  <div
+    className="glass-card aspect-square flex flex-col items-center justify-center gap-1 rounded-xl transition-all duration-300"
+    style={{ borderRadius: "1.2rem" }}
+  >
+    <Icon className="text-white text-3xl md:text-4xl" />
+    <p className="text-white text-xs font-semibold mt-1">{name}</p>
+  </div>
+);
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-32 bg-secondary/5">
-      <div className="container px-4 md:px-6 mx-auto max-w-5xl">
-         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="space-y-12"
-        >
-          <div className="text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Technologies & Tools</h2>
-            <p className="text-muted-foreground">
-               My tech stack and the modern tools I use.
-            </p>
-          </div>
+    <section id="skills" style={{ minHeight: "100vh", padding: "8rem 0" }}>
+      <h5 className="text-center text-custom-light">The Skills I Have</h5>
+      <h2 className="text-center text-white text-3xl md:text-4xl font-bold mb-12">
+        My Experience
+      </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {Object.entries(skills).map(([category, items], catIndex) => (
-              <motion.div 
-                key={category}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: catIndex * 0.1 }}
-                className="bg-card/50 p-6 rounded-2xl border border-white/5"
-              >
-                 <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
-                    {category === "Languages" && <Code2 className="h-5 w-5 text-emerald-500" />}
-                    {category === "Tech Stack (MERN+)" && <Layers className="h-5 w-5 text-blue-500" />}
-                    {category === "Database" && <Database className="h-5 w-5 text-purple-500" />}
-                    {category === "Tools & Libraries" && <Wrench className="h-5 w-5 text-orange-500" />}
-                    {category}
-                 </h3>
-                 <div className="flex flex-wrap gap-2">
-                    {items.map((skill) => (
-                      <div
-                        key={skill}
-                        className="group flex items-center gap-2 px-3 py-1.5 rounded-lg bg-secondary/30 border border-white/5 hover:border-white/10 hover:bg-secondary/50 transition-all cursor-default"
-                      >
-                        <span className="text-sm font-medium text-foreground/80">{skill}</span>
-                      </div>
-                    ))}
-                 </div>
-              </motion.div>
-            ))}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mx-auto grid gap-10"
+        style={{
+          width: "80vw",
+          maxWidth: "1200px",
+          gridTemplateColumns: "1fr 1fr",
+        }}
+      >
+        {/* Frontend Column */}
+        <div className="glass-card rounded-2xl p-8 md:p-10">
+          <h3 className="text-center text-white text-xl font-bold mb-6">
+            Frontend Development
+          </h3>
+          <div
+            className="grid gap-4"
+            style={{
+              gridTemplateColumns: "repeat(auto-fill, minmax(100px, 1fr))",
+            }}
+          >
+            <Tile icon={SiJavascript} name="JavaScript" />
+            <Tile icon={SiTypescript} name="TypeScript" />
+            <Tile icon={SiReact} name="React" />
+            <Tile icon={SiNextdotjs} name="Next.js" />
+            <Tile icon={SiTailwindcss} name="Tailwind" />
           </div>
-        </motion.div>
-      </div>
+        </div>
+
+        {/* Backend Column */}
+        <div className="glass-card rounded-2xl p-8 md:p-10">
+          <h3 className="text-center text-white text-xl font-bold mb-6">
+            Backend Development
+          </h3>
+          <div
+            className="grid gap-4"
+            style={{
+              gridTemplateColumns: "repeat(auto-fill, minmax(100px, 1fr))",
+            }}
+          >
+            <Tile icon={SiNodedotjs} name="Node.js" />
+            <Tile icon={SiExpress} name="Express" />
+            <Tile icon={SiMongodb} name="MongoDB" />
+            <Tile icon={SiPostgresql} name="PostgreSQL" />
+            <Tile icon={SiPrisma} name="Prisma" />
+            <Tile icon={SiRedis} name="Redis" />
+            <Tile icon={SiPython} name="Python" />
+            <Tile icon={SiDocker} name="Docker" />
+            <Tile icon={SiFirebase} name="Firebase" />
+            <Tile icon={SiGit} name="Git" />
+            <Tile icon={SiGithub} name="GitHub" />
+            <Tile icon={SiPostman} name="Postman" />
+          </div>
+        </div>
+      </motion.div>
+
+      <h5 className="text-center text-custom-light text-sm mt-12">
+        More skills can be found on my resume
+      </h5>
+
+      {/* Mobile responsive */}
+      <style jsx>{`
+        @media (max-width: 1024px) {
+          .grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

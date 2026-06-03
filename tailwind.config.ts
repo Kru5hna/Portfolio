@@ -9,9 +9,18 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			poppins: ['var(--font-poppins)', 'Poppins', 'sans-serif'],
+  			montserrat: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
+  		},
   		colors: {
   			background: 'var(--background)',
   			foreground: 'var(--foreground)',
+  			'custom-bg': 'rgb(3, 3, 5)',
+  			'custom-pink': '#FD0988',
+  			'custom-purple': '#7237BD',
+  			'custom-gray': 'rgb(168, 168, 168)',
+  			'custom-light': 'rgba(255,255,255,0.6)',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

@@ -1,45 +1,78 @@
-// import Link from 'next/link';
-// import { Github, Linkedin, Twitter } from 'lucide-react';
+"use client";
 
-// const Footer = () => {
-//   return (
-//     <footer className="w-full py-6 md:py-10 border-t border-border bg-background/50 backdrop-blur-sm">
-//       <div className="container mx-auto px-4 md:px-6 flex flex-col items-center justify-between gap-4 md:flex-row">
-//         <p className="text-sm text-muted-foreground text-center md:text-left">
-//           © 2025 Krushna Raut. Built with Next.js & Tailwind.
-//         </p>
-//         <div className="flex items-center gap-4">
-//           <Link
-//             href="https://github.com/kru5hna"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="text-muted-foreground hover:text-foreground transition-colors"
-//           >
-//             <Github className="h-5 w-5" />
-//             <span className="sr-only">GitHub</span>
-//           </Link>
-//           <Link
-//             href="https://www.linkedin.com/in/krushna-raut-347a3b27b/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="text-muted-foreground hover:text-foreground transition-colors"
-//           >
-//             <Linkedin className="h-5 w-5" />
-//             <span className="sr-only">LinkedIn</span>
-//           </Link>
-//           <Link
-//             href="https://x.com/raut2135"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="text-muted-foreground hover:text-foreground transition-colors"
-//           >
-//             <Twitter className="h-5 w-5" />
-//             <span className="sr-only">Twitter</span>
-//           </Link>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
+import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
-// export default Footer;
+const permalinks = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
+export default function Footer() {
+  return (
+    <footer
+      className="text-center py-12"
+      style={{
+        backdropFilter: "blur(50px)",
+        WebkitBackdropFilter: "blur(50px)",
+        background: "rgba(0,0,0,0.8)",
+        marginTop: "7rem",
+        fontSize: "0.9rem",
+      }}
+    >
+      <a
+        href="#home"
+        className="block text-white font-bold text-2xl mb-8 hover:text-white"
+      >
+        Krushna
+      </a>
+
+      <ul className="flex flex-wrap justify-center gap-8 mb-6 mx-auto list-none">
+        {permalinks.map((link) => (
+          <li key={link.label}>
+            <a
+              href={link.href}
+              className="text-custom-light font-medium hover:text-white"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div className="flex justify-center gap-4 mb-12 text-2xl">
+        <Link
+          href="https://github.com/Kru5hna"
+          target="_blank"
+          className="p-3 rounded-lg flex border border-transparent text-custom-light hover:text-white"
+        >
+          <FaGithub />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/krushna-raut-347a3b27b/"
+          target="_blank"
+          className="p-3 rounded-lg flex border border-transparent text-custom-light hover:text-white"
+        >
+          <FaLinkedin />
+        </Link>
+        <Link
+          href="https://leetcode.com/u/Krushna_2135/"
+          target="_blank"
+          className="p-3 rounded-lg flex border border-transparent text-custom-light hover:text-white"
+        >
+          <SiLeetcode />
+        </Link>
+      </div>
+
+      <div className="text-custom-light mb-12">
+        <small>
+          &copy; {new Date().getFullYear()} Krushna Raut. All rights reserved
+        </small>
+      </div>
+    </footer>
+  );
+}
