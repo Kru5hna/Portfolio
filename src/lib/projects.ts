@@ -16,6 +16,21 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 0,
+    title: "Privault",
+    featuredTitle: "Privault — Zero-Knowledge Encrypted Document Vault",
+    category: ["Full Stack", "Backend"],
+    description:
+      "Zero-knowledge encrypted document vault. Files are encrypted with AES-256-GCM in your browser before touching the server. Built with Rust (Axum), Next.js, and Web Crypto API.",
+    tech: ["Next.js", "React", "Rust", "Axum", "PostgreSQL", "Web Crypto"],
+    links: {
+      github: "https://github.com/Kru5hna/Privault",
+      demo: "https://localprivault.com",
+    },
+    image: "/hero-desktop.png",
+    status: "Live",
+  },
+  {
     id: 1,
     title: "Rate-Shield",
     featuredTitle: "Rate-Shield - Node.js Rate Limiter",
@@ -27,7 +42,7 @@ export const projects: Project[] = [
       github: "https://github.com/Kru5hna/rate-shield",
       package: "https://www.npmjs.com/package/rate-shield",
     },
-    image: "/rate-shield.svg",
+    image: "/images.png",
     status: "NPM v1.0.0",
   },
   {
@@ -42,7 +57,7 @@ export const projects: Project[] = [
       github: "https://github.com/Kru5hna/SecureGate",
       demo: "https://huggingface.co/spaces/Krishna2722/SecureGate"
     },
-    image: "/securegate.svg",
+    image: "/securegate.png",
     status: "Sample preview",
   },
   {

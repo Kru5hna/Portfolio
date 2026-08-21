@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import { Poppins, Montserrat } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  weight: ["300", "500", "700", "900"],
-  variable: "--font-poppins",
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
-const montserrat = Montserrat({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "700", "900"],
-  variable: "--font-montserrat",
+  variable: "--font-inter",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Krushna Raut",
+  title: "Krushna Raut | Full Stack & AI Software Engineer",
   description:
-    "Portfolio of Krushna Raut, a Full Stack Developer specializing in modern web technologies, AI, and Web3.",
+    "Product-minded engineer building high performance web applications, AI models, zero-knowledge systems, and delightful visual experiences.",
   icons: {
     icon: "/pfp.png",
     shortcut: "/pfp.png",
@@ -33,8 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={`${instrumentSerif.variable} ${inter.variable}`}
+    >
+      <body className="antialiased dark">
+        <div className="bottom-vignette" />
+        {children}
+      </body>
     </html>
   );
 }
+

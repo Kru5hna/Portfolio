@@ -1,0 +1,25 @@
+{
+  "name": "krushna",
+  "version": "1.0.0",
+  "description": "Krushna Raut's Personal Terminal Business Card",
+  "main": "index.js",
+  "bin": {
+    "krushna": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "card",
+    "cli",
+    "krushna",
+    "developer",
+    "portfolio"
+  ],
+  "author": "Krushna Raut",
+  "license": "MIT",
+  "dependencies": {
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2"
+  }
+}

@@ -16,16 +16,16 @@ const experience = [
       "Implemented role-based access control (RBAC) and an Aadhaar-linked authentication system, integrating ABDM APIs for ABHA (M1–M4) onboarding and identity verification across user roles.",
       "Designed MongoDB schemas and aggregation pipelines for inventory and order tracking; led a sub-team on modular feature delivery.",
     ],
-
-  
   },
 ];
 
 export default function Experience() {
   return (
     <section id="experience" style={{ minHeight: "auto", padding: "6rem 0" }}>
-      <h5 className="text-center text-custom-light">Where I&apos;ve Worked</h5>
-      <h2 className="text-center text-white text-3xl md:text-4xl font-bold mb-12">
+      <span className="typo-label block text-center text-white/40 mb-3">
+        Where I&apos;ve Worked
+      </span>
+      <h2 className="font-playfair text-center text-white text-4xl md:text-5xl font-bold mb-16">
         Experience
       </h2>
 
@@ -50,19 +50,19 @@ export default function Experience() {
               </div>
               <div>
                 <h3 className="text-white font-bold text-lg">{job.role}</h3>
-                <p className="text-custom-pink font-medium">{job.company}</p>
+                <p className="text-custom-pink typo-title-xsmall mt-0.5">{job.company}</p>
               </div>
-              <span className="ml-auto text-custom-light text-sm whitespace-nowrap">
+              <span className="typo-label ml-auto text-white/40 whitespace-nowrap">
                 {job.period}
               </span>
             </div>
 
-            <p className="text-custom-light text-sm mb-2">{job.type}</p>
-            <p className="text-custom-light text-sm mb-4">{job.description}</p>
+            <p className="typo-paragraph text-custom-light mb-2">{job.type}</p>
+            <p className="typo-paragraph text-custom-light mb-4">{job.description}</p>
 
             <ul className="list-disc list-outside ml-5 space-y-1">
               {job.achievements.map((item, i) => (
-                <li key={i} className="text-custom-light text-sm">
+                <li key={i} className="typo-paragraph text-custom-light">
                   {item}
                 </li>
               ))}
